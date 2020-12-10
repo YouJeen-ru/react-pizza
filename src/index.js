@@ -4,11 +4,17 @@ import './scss/app.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter as Router, Route} from "react-router-dom";
-import Header from "./components/Header";
+import store from "./redux/store";
+import {Provider} from "react-redux";
+
+
+
 
 ReactDOM.render(
     <Router>
-       <App/>
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </Router>,
   document.getElementById('root')
 );
