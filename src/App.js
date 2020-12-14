@@ -4,7 +4,7 @@ import {Home, Cart} from "./pages";
 import {Route} from "react-router-dom";
 import axios from 'axios'
 import {useDispatch, useSelector} from "react-redux";
-import {setPizzas} from "./redux/actions/pizzas";
+import {fetchPizzas} from "./redux/actions/pizzas";
 
 
 function App() {
@@ -13,9 +13,7 @@ function App() {
 
     useEffect(() => {
         // Перенести в Redux и подключить redux-thunk
-        axios.get('http://localhost:3001/pizzas').then(({ data }) => {
-            dispatch(setPizzas(data))
-        })
+
     }, [])
     return (
         <>
