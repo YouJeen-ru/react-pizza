@@ -25,6 +25,7 @@ const Home = () => {
 
     const items = useSelector(({pizzas}) => pizzas.items )
     const isLoaded = useSelector(({pizzas}) => pizzas.isLoaded )
+
     const onSelectCategory = useCallback((index) => {
         dispatch(setCategory(index))
     }, [])
