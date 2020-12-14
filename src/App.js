@@ -12,7 +12,7 @@ function App() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        // Перенести в Redux и подключить redux-thunk
+        dispatch(fetchPizzas())
 
     }, [])
     return (
