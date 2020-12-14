@@ -2,14 +2,19 @@ import React, {useState} from 'react';
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import ContentLoader from "react-content-loader";
+import LoadingBlock from "./LoadingBlock";
 
-const PizzaBlock = ({name, imageUrl, price, types, sizes}) => {
+const PizzaBlock = ({name, imageUrl, price, types, sizes, isLoading}) => {
+
+
 
     const availableTypes = ['тонкое', 'традиционное']
     const availableSizes = [26, 30, 40]
 
     const [activeType, setActiveType] = useState(types[0])
     const [activeSize, setActiveSize] = useState(sizes[0])
+
+
 
     const onSelectType = index => {
         setActiveType(index)
@@ -18,23 +23,7 @@ const PizzaBlock = ({name, imageUrl, price, types, sizes}) => {
         setActiveSize(index)
     }
 
-    // return (
-    //     <ContentLoader
-    //         speed={2}
-    //         width={280}
-    //         height={460}
-    //         viewBox="0 0 280 460"
-    //         backgroundColor="#f3f3f3"
-    //         foregroundColor="#ecebeb"
-    //     >
-    //         <circle cx="131" cy="127" r="119" />
-    //         <rect x="0" y="259" rx="6" ry="6" width="255" height="26" />
-    //         <rect x="0" y="460" rx="6" ry="6" width="280" height="84" />
-    //         <rect x="0" y="300" rx="6" ry="6" width="255" height="84" />
-    //         <rect x="0" y="407" rx="6" ry="6" width="80" height="31" />
-    //         <rect x="128" y="397" rx="25" ry="25" width="128" height="51" />
-    //     </ContentLoader>
-    // )
+
 
     return (
         <>
@@ -99,10 +88,16 @@ PizzaBlock.propTypes = {
     price: PropTypes.number.isRequired,
     types: PropTypes.arrayOf(PropTypes.number),
     sizes: PropTypes.arrayOf(PropTypes.number),
+    isLoading: PropTypes.bool
 }
 
 PizzaBlock.defaultProps = {
-    types: []
+    name:'---',
+    price: 0,
+    types: [],
+    sizes: [],
+    isLoading: false
+
 }
 
 export default PizzaBlock;
