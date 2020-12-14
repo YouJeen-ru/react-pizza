@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import ContentLoader from "react-content-loader";
 import LoadingBlock from "./LoadingBlock";
 
-const PizzaBlock = ({name, imageUrl, price, types, sizes, isLoading}) => {
+const PizzaBlock = ({name, imageUrl, price, types, sizes}) => {
 
 
 

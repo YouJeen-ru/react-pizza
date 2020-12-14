@@ -1,24 +1,21 @@
 import React, {useState} from 'react';
+import PropTypes from "prop-types";
+import PizzaBlock from "./PizzaBlock/PizzaBlock";
 
-const Categories = React.memo(({ items, onClickItem }) => {
-    const [activeItem, setActiveItem] = useState(null)
+const Categories = React.memo(({activeCategory, items, onClickCategory }) => {
 
-    const onSelectItem = index => {
-        setActiveItem(index)
-        onClickItem(index)
-    }
     return (
         <>
             <div className="categories">
                 <ul>
-                    <li className={activeItem === null ? 'active' : ''} onClick={() => onSelectItem(null)}>
+                    <li className={activeCategory === null ? 'active' : ''} onClick={() => onClickCategory(null)}>
                         Все
                     </li>
 
                     {
                         items && items.map((name, index) =>
-                            <li className={activeItem === index ? 'active' : ''}
-                                onClick={() => onSelectItem(index)} key={`${name}-${index}`}>
+                            <li className={activeCategory === index ? 'active' : ''}
+                                onClick={() => onClickCategory(index)} key={`${name}-${index}`}>
                             {name}
                         </li>)
                     }
@@ -28,5 +25,7 @@ const Categories = React.memo(({ items, onClickItem }) => {
         </>
     );
 });
+
+
 
 export default Categories;
