@@ -1,6 +1,12 @@
 import React from 'react';
+import Button from "./Button";
 
-const CartItem = ({ name, type, size, totalPrice, totalCount }) => {
+const CartItem = ({ id, name, type, size, totalPrice, totalCount, onRemoveItem }) => {
+
+    const handleRemoveClick = () => {
+        onRemoveItem(id)
+    }
+
     return (
         <>
             <div className="cart__item">
@@ -46,7 +52,7 @@ const CartItem = ({ name, type, size, totalPrice, totalCount }) => {
                     <b>{totalPrice} ₽</b>
                 </div>
                 <div className="cart__item-remove">
-                    <div className="button button--outline button--circle">
+                    <Button onClick={handleRemoveClick} className="button--circle" outline>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -57,7 +63,7 @@ const CartItem = ({ name, type, size, totalPrice, totalCount }) => {
                                 fill="#EB5A1E"/>
                         </svg>
 
-                    </div>
+                    </Button>
                 </div>
             </div>
         </>
