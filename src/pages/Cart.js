@@ -45,7 +45,8 @@ const Cart = () => {
             <div className="content">
                 <div className="container container--cart">
                     {
-                        totalCount ? <div className="cart">
+                        totalCount ?
+                            ( <div className="cart">
                                 <div className="cart__top">
                                     <h2 className="content__title">
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -107,10 +108,15 @@ const Cart = () => {
                                     </div>
                                     <div className="cart__bottom-buttons">
                                         <a href="/" className="button button--outline button--add go-back-btn">
-                                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                            <svg  width="8"
+                                                  height="14"
+                                                  viewBox="0 0 8 14" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5"
-                                                      strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M7 13L1 6.93015L6.86175 1"
+                                                      stroke="#D3D3D3"
+                                                      strokeWidth="1.5"
+                                                      strokeLinecap="round"
+                                                      strokeLinejoin="round"/>
                                             </svg>
                                             <Link to="/">
                                                 <span>Вернуться назад</span>
@@ -122,8 +128,10 @@ const Cart = () => {
                                     </div>
                                 </div>
                             </div>
+                            )
                             :
-                            <div className="cart cart--empty">
+                            (
+                                <div className="cart cart--empty">
                                 <h2>Корзина пустая</h2>
                                 <p>
                                     Вероятней всего, вы не заказывали ещё пиццу.<br/>
@@ -134,8 +142,7 @@ const Cart = () => {
                                     <span>Вернуться назад</span>
                                 </Link>
                             </div>
-                    }
-
+                            )}
                 </div>
             </div>
         </>
