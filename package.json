@@ -36,7 +36,8 @@
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
-    "json-server": "^0.16.1"
+    "express": "^4.17.1",
+    "json-server": "^0.16.3"
   },
   "browserslist": {
     "production": [
